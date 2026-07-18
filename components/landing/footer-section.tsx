@@ -17,7 +17,7 @@ const footerLinks = {
     { name: "Karier", href: "#", badge: "Hiring" },
   ],
   Kontak: [
-    { name: "WhatsApp", href: "https://wa.me/6281234567890" },
+    { name: "WhatsApp", href: "https://wa.me/6282130300614" },
     { name: "Email", href: "mailto:halo@xora.id" },
     { name: "Konsultasi Gratis", href: "#contact" },
     { name: "Lokasi", href: "#contact" },
@@ -31,7 +31,7 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "Instagram", href: "#" },
-  { name: "WhatsApp", href: "https://wa.me/6281234567890" },
+  { name: "WhatsApp", href: "https://wa.me/6282130300614" },
   { name: "TikTok", href: "#" },
 ];
 
@@ -42,7 +42,7 @@ export function FooterSection() {
       <div className="absolute inset-0 h-64 opacity-20 pointer-events-none overflow-hidden">
         <AnimatedWave />
       </div>
-      
+
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Main Footer */}
         <div className="py-16 lg:py-24">

@@ -71,10 +71,19 @@ export function Navigation() {
               Tentang
             </a>
             <Button
+              asChild
               size="sm"
-              className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+              className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"
+                }`}
             >
-              Konsultasi Gratis
+              <a
+                href="https://wa.me/6282130300614?text=Halo%20Admin,%0A%0ASaya%20ingin%20memesan%20jasa%20pembuatan%20website.%20Mohon%20informasi%20lebih%20lanjut%20mengenai%20paket%20dan%20harganya.%20Terima%20kasih."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Konsultasi Gratis
+              </a>
             </Button>
           </div>
 
