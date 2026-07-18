@@ -5,48 +5,63 @@ import { ArrowRight, Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Basic",
-    description: "Untuk UMKM & usaha yang baru mulai",
-    price: { build: "1.5jt", renewal: "500rb" },
+    name: "Membership Promo",
+    description: "Cocok untuk UMKM yang ingin mulai online dengan biaya ringan.",
+    price: {
+      build: "500rb",
+      renewal: "300rb",
+    },
     features: [
-      "Landing page (1 halaman)",
-      "Domain & hosting 1 tahun",
-      "SSL & responsive design",
+      "Website 2-3 halaman",
+      "Responsive Design",
+      "Domain & Hosting",
+      "SSL Gratis",
       "Integrasi WhatsApp",
+      "Basic SEO",
+      "Maintenance bulanan",
+      "Support WhatsApp",
+    ],
+    cta: "Mulai Sekarang",
+    popular: true,
+  },
+
+  {
+    name: "Basic",
+    description: "Website profesional dengan pembayaran sekali.",
+    price: {
+      build: "1jt",
+      renewal: "300rb",
+    },
+    features: [
+      "Website hingga 5 halaman",
+      "Responsive Design",
+      "Domain & Hosting 1 Tahun",
+      "SSL Gratis",
+      "Integrasi WhatsApp",
+      "Google Maps",
       "Basic SEO",
       "Garansi",
     ],
     cta: "Konsultasi Gratis",
     popular: false,
   },
-  {
-    name: "Bisnis",
-    description: "Paling populer untuk bisnis berkembang",
-    price: { build: "3jt", renewal: "750rb" },
-    features: [
-      "Website multi halaman",
-      "Domain & hosting 1 tahun",
-      "SSL & responsive design",
-      "Integrasi WhatsApp",
-      "Katalog produk / layanan",
-      "Google Maps & galeri",
-      "Basic SEO + garansi",
-    ],
-    cta: "Konsultasi Gratis",
-    popular: true,
-  },
+
   {
     name: "Premium",
-    description: "Untuk toko online & kebutuhan khusus",
-    price: { build: null, renewal: null },
+    description: "Untuk kebutuhan bisnis yang lebih kompleks.",
+    price: {
+      build: null,
+      renewal: null,
+    },
     features: [
-      "Semua fitur paket Bisnis",
-      "Katalog + keranjang + checkout",
-      "Order langsung ke WhatsApp",
-      "Custom digital solution",
-      "Prioritas pengerjaan",
-      "Maintenance & backup",
-      "Konsultasi kebutuhan khusus",
+      "Halaman unlimited",
+      "Custom Design",
+      "Admin Panel",
+      "Booking / Form",
+      "Katalog Produk",
+      "E-Commerce",
+      "Maintenance Prioritas",
+      "Custom Request",
     ],
     cta: "Hubungi Kami",
     popular: false,
@@ -77,9 +92,8 @@ export function PricingSection() {
         {/* Billing Toggle */}
         <div className="flex items-center gap-4 mb-16">
           <span
-            className={`text-sm transition-colors ${
-              !showRenewal ? "text-foreground" : "text-muted-foreground"
-            }`}
+            className={`text-sm transition-colors ${!showRenewal ? "text-foreground" : "text-muted-foreground"
+              }`}
           >
             Pembuatan (sekali)
           </span>
@@ -88,17 +102,15 @@ export function PricingSection() {
             className="relative w-14 h-7 bg-foreground/10 rounded-full p-1 transition-colors hover:bg-foreground/20"
           >
             <div
-              className={`w-5 h-5 bg-foreground rounded-full transition-transform duration-300 ${
-                showRenewal ? "translate-x-7" : "translate-x-0"
-              }`}
+              className={`w-5 h-5 bg-foreground rounded-full transition-transform duration-300 ${showRenewal ? "translate-x-7" : "translate-x-0"
+                }`}
             />
           </button>
           <span
-            className={`text-sm transition-colors ${
-              showRenewal ? "text-foreground" : "text-muted-foreground"
-            }`}
+            className={`text-sm transition-colors ${showRenewal ? "text-foreground" : "text-muted-foreground"
+              }`}
           >
-            Perpanjangan / tahun
+            Perpanjangan / Bulan
           </span>
         </div>
 
@@ -107,9 +119,8 @@ export function PricingSection() {
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className={`relative p-8 lg:p-12 bg-background ${
-                plan.popular ? "md:-my-4 md:py-12 lg:py-16 border-2 border-foreground" : ""
-              }`}
+              className={`relative p-8 lg:p-12 bg-background ${plan.popular ? "md:-my-4 md:py-12 lg:py-16 border-2 border-foreground" : ""
+                }`}
             >
               {plan.popular && (
                 <span className="absolute -top-3 left-8 px-3 py-1 bg-foreground text-primary-foreground text-xs font-mono uppercase tracking-widest">
@@ -135,7 +146,7 @@ export function PricingSection() {
                       {showRenewal ? plan.price.renewal : plan.price.build}
                     </span>
                     <span className="text-muted-foreground">
-                      {showRenewal ? "/tahun" : "sekali"}
+                      {showRenewal ? "/bulan" : "sekali"}
                     </span>
                   </div>
                 ) : (
@@ -155,11 +166,10 @@ export function PricingSection() {
 
               {/* CTA */}
               <button
-                className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
-                  plan.popular
-                    ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
-                    : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5"
-                }`}
+                className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${plan.popular
+                  ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
+                  : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5"
+                  }`}
               >
                 {plan.cta}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
